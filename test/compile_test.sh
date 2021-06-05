@@ -2,7 +2,7 @@
 
 . ${BUILDPACK_TEST_RUNNER_HOME}/lib/test_utils.sh
 
-compile() 
+testPromtailRunning() 
 {
-  echo "This is a test"  
+  ps aux
 }
