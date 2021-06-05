@@ -19,14 +19,6 @@ cd $BUILD_DIR
 curl -fSL -o promtail.gz "https://github.com/grafana/loki/releases/download/${PROMTAIL_VERSION}/promtail-linux-amd64.zip"
 gunzip promtail.gz && chmod a+x promtail 
 
-# Generate promtail config, or use existing 
-if [[ -z "$PROMTAIL_CONFIG" ]]; then 
-  
-else 
-    
-
-fi
-
 # Install the service 
 mkdir -p "$BUILD_DIR/.profile.d"
 chmod +x "$BUILD_DIR/.profile.d/promtail.sh"
