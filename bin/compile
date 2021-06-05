@@ -19,6 +19,8 @@ cd $BUILD_DIR
 curl -fSL -o promtail.gz "https://github.com/grafana/loki/releases/download/${PROMTAIL_VERSION}/promtail-linux-amd64.zip"
 gunzip promtail.gz && chmod a+x promtail 
 
+echo "------> ${BUILDPACK_DIR}"
+ls
 # Install the service 
 cp "$BUILDPACK_DIR/promtail.sh" "$BUILD_DIR/.profile.d/promtail.sh"
 chmod +x "$BUILD_DIR/.profile.d/promtail.sh"
