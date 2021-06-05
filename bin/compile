@@ -5,6 +5,8 @@ set -o pipefail
 
 ## Install promtail 
 
+BUILDPACK_DIR=$(cd "$(dirname "$0")"; cd ..; pwd)
+
 # Ensure version
 if [[ -z "$PROMTAIL_VERSION" ]]; then 
   PROMTAIL_VERSION="v1.6.1"
