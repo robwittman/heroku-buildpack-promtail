@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-promtail -config.file test.yaml
+./promtail -config.file test.yaml
