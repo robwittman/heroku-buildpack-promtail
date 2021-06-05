@@ -15,10 +15,9 @@ if [[ -z "$PROMTAIL_ENDPOINT" ]]; then
   PROMTAIL_ENDPOINT="some-super-cool-host.com"
 fi
 echo "------> Installing Promtail version ${PROMTAIL_VERSION}"
+cd $BUILD_DIR
 curl -fSL -o promtail.gz "https://github.com/grafana/loki/releases/download/${PROMTAIL_VERSION}/promtail-linux-amd64.zip"
-gunzip promtail.gz
-mv promtail /usr/local/bin/
-chmod a+x /usr/local/bin/promtail 
+gunzip promtail.gz && chmod a+x promtail 
 
 # Generate promtail config, or use existing 
 if [[ -z "$PROMTAIL_CONFIG" ]]; then 
