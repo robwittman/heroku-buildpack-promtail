@@ -2,6 +2,7 @@
 
 . ${BUILDPACK_TEST_RUNNER_HOME}/lib/test_utils.sh
 
-compile() {
-  
+compile() 
+{
+  echo "This is a test"  
 }
