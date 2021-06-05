@@ -7,7 +7,7 @@ set -o pipefail
 
 # Ensure version
 if [[ -z "$PROMTAIL_VERSION" ]]; then 
-  PROMTAIL_VERSION="v1.16.1"
+  PROMTAIL_VERSION="v1.6.1"
 fi
 
 # Ensure endpoint 
