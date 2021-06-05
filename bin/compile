@@ -3,7 +3,6 @@
 set -e
 set -o pipefail 
 
-source "$BUILDPACK_DIR/bin/includes.sh"
 ## Install promtail 
 
 # Ensure version
@@ -15,8 +14,7 @@ fi
 if [[ -z "$PROMTAIL_ENDPOINT" ]]; then 
   PROMTAIL_ENDPOINT="some-super-cool-host.com"
 fi
-
-header "Installing Promtail version ${PROMTAIL_VERSION}"
+echo "------> Installing Promtail version ${PROMTAIL_VERSION}"
 curl -fSL -o promtail.gz "https://github.com/grafana/loki/releases/download/${PROMTAIL_VERSION}/promtail-linux-amd64.zip"
 gunzip promtail.gz
 chmod a+x /usr/local/bin/promtail 
